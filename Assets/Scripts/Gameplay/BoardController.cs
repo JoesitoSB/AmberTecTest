@@ -75,6 +75,8 @@ public class BoardController : MonoBehaviour
                 {
                     bBP = Instantiate(enemySpawnerBP, pos, Quaternion.identity, transform).GetComponent<BaseBoardPiece>();
                     board[i, j] = bBP;
+                    var enemySpawner = (EnemySpawnerBoardPiece)bBP;
+                    enemySpawner.AssignCamera(mainCamera);
                 }
                 else
                 {

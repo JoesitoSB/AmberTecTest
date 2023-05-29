@@ -6,6 +6,8 @@ public class Enemy3 : BaseEnemy
 {
     protected override void Attack()
     {
+        if (GameStateController.GetCurrentState != GameStates.Play) return;
+
         var bullet = Instantiate(enemyInfo.BulletsPrefab,
                                     transform.position,
                                     Quaternion.Euler(0, 0, 90), transform)
