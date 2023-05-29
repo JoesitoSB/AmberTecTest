@@ -19,4 +19,9 @@ public abstract class BaseEnemy : BaseCharacter
     {
         transform.Translate(new Vector3(0, enemyInfo.MovementSpeed * Time.deltaTime * -1, 0));
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Triggered enemy");
+    }
 }

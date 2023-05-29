@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 348947196}
   - component: {fileID: 348947195}
   - component: {fileID: 348947198}
-  - component: {fileID: 348947199}
   m_Layer: 5
   m_Name: SelectionTowerBar
   m_TagString: Untagged
@@ -203,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -247,18 +246,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1f5e70b65ee44fb7a80a9d9f8c57bdf, type: 2}
   selectedTowerReference: {fileID: 11400000, guid: 079fac4e429f447a1800c49d98a682fe, type: 2}
   selectTowerButton: {fileID: 4810536008880658060, guid: abb256e4011564f53865d5415e71eba4, type: 3}
---- !u!225 &348947199
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348947193}
-  m_Enabled: 1
-  m_Alpha: 0.6
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &790882371
 GameObject:
   m_ObjectHideFlags: 0
