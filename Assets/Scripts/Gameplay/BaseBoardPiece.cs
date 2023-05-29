@@ -14,12 +14,6 @@ public abstract class BaseBoardPiece : MonoBehaviour
 
     public void Init(Vector2 id)
     {
-        this.id = id;
-        //PutInPlace(pos.x, pos.y);
+        this.id = id;        
     }
-
-    /*private void PutInPlace(float xPos, float yPos)
-    {
-        transform.SetLocalPositionAndRotation(new Vector3(xPos, yPos, 0), Quaternion.Euler(0, 0, 0));
-    }*/
 }

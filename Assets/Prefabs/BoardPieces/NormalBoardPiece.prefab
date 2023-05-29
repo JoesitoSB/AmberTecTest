@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4040996675410397925}
   - component: {fileID: 4040996675410397926}
-  - component: {fileID: 4040996675410397924}
+  - component: {fileID: 4828484632345781808}
+  - component: {fileID: 5162235708130543786}
   m_Layer: 0
   m_Name: NormalBoardPiece
   m_TagString: Untagged
@@ -85,7 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4040996675410397924
+--- !u!65 &4828484632345781808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4040996675410397927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28, z: 0.2}
+  m_Center: {x: 0.64, y: -0.64, z: 0}
+--- !u!114 &5162235708130543786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4040996675410397927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0453d21d1c0284070b291ebe7a21e4fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 787dbed8098bc4dafa3e306fb7ccfa04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 4040996675410397926}
