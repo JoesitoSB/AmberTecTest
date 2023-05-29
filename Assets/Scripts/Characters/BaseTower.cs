@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class BaseTower : BaseCharacter
 {
-    [SerializeField] private SpriteRenderer spriteRenderer = null;
     [SerializeField] private TowerInfoScriptableObject towerInfo = null;
     protected float spawnCooldownTime = 0;
     //current board piece here
@@ -12,5 +11,15 @@ public abstract class BaseTower : BaseCharacter
     private void Awake()
     {
         spriteRenderer.sprite = towerInfo.Sprite;
+        health = towerInfo.Health;
+        damage = towerInfo.Damage;
+        range = towerInfo.Range;
+        attackSpeed = towerInfo.AttackSpeed;
+        spawnCooldownTime = towerInfo.SpawnCooldownTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Triggered");
     }
 }

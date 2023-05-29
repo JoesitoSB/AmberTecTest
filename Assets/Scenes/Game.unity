@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 348947196}
   - component: {fileID: 348947195}
   - component: {fileID: 348947198}
+  - component: {fileID: 348947199}
   m_Layer: 5
   m_Name: SelectionTowerBar
   m_TagString: Untagged
@@ -158,11 +159,11 @@ RectTransform:
   m_Father: {fileID: 1924755112}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -415.18}
-  m_SizeDelta: {x: 1187.61, y: 204.57}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 51.535034}
+  m_SizeDelta: {x: 800, y: 180}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &348947195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +247,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1f5e70b65ee44fb7a80a9d9f8c57bdf, type: 2}
   selectedTowerReference: {fileID: 11400000, guid: 079fac4e429f447a1800c49d98a682fe, type: 2}
   selectTowerButton: {fileID: 4810536008880658060, guid: abb256e4011564f53865d5415e71eba4, type: 3}
+--- !u!225 &348947199
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348947193}
+  m_Enabled: 1
+  m_Alpha: 0.6
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &790882371
 GameObject:
   m_ObjectHideFlags: 0

@@ -112,3 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5343557794609847821}
+  enemiesToSpawn:
+  - {fileID: 11400000, guid: cdec154dc69ba43569f7843cbb25327b, type: 2}
+  - {fileID: 11400000, guid: d8433715e3b064dc8aab25bda2bc1629, type: 2}
+  - {fileID: 11400000, guid: d441774ddc17c4801a3e0ea74dc7c811, type: 2}

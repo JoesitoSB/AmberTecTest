@@ -87,14 +87,6 @@ public class BoardController : MonoBehaviour
 
     public void ShowAvailableBoardPlaces(bool show)
     {
-        /*for(int i = 0; i < rowAmount; i++)
-        {
-            for(int j = 0; j < columnsAmount / 2; j++) // just half because just the half of the columns are able to have towers in it
-            {
-                var bTB= (BaseTowerBoardPiece) board[i, j];
-                bTB.ShowCanvas(true);
-            }
-        }*/
         showAvailablePlaces?.Invoke(show);
     }
 
