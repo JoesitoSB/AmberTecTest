@@ -11,4 +11,15 @@ public abstract class BaseCharacter : MonoBehaviour
     protected float attackSpeed = 0;
     protected abstract void Attack();
     protected abstract void Die();
+
+    public Vector2 GetSize()
+    {
+        return spriteRenderer.bounds.size;
+    }
+
+    public void Hurt(float damage)
+    {
+        health -= damage;
+        if (health <= 0) Die();
+    }
 }

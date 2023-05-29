@@ -6,16 +6,16 @@ public class Enemy3 : BaseEnemy
 {
     protected override void Attack()
     {
-        throw new System.NotImplementedException();
+        var bullet = Instantiate(enemyInfo.BulletsPrefab,
+                                    transform.position,
+                                    Quaternion.Euler(0, 0, 90), transform)
+                                    .GetComponent<EnemyNormalBullet>();
+        bullet.Init(enemyInfo.BulletSpeed, enemyInfo.Damage);
+        Invoke(nameof(Attack), enemyInfo.AttackSpeed);
     }
 
     protected override void Die()
     {
-        throw new System.NotImplementedException();
-    }
-
-    protected override void Move()
-    {
-        throw new System.NotImplementedException();
+        Destroy(gameObject);
     }
 }

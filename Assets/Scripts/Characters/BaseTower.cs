@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseTower : BaseCharacter
 {
-    [SerializeField] private TowerInfoScriptableObject towerInfo = null;
+    [SerializeField] protected TowerInfoScriptableObject towerInfo = null;
     protected float spawnCooldownTime = 0;
     //current board piece here
 
@@ -16,6 +16,11 @@ public abstract class BaseTower : BaseCharacter
         range = towerInfo.Range;
         attackSpeed = towerInfo.AttackSpeed;
         spawnCooldownTime = towerInfo.SpawnCooldownTime;
+    }
+
+    private void Start()
+    {
+        Invoke(nameof(Attack), towerInfo.AttackSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

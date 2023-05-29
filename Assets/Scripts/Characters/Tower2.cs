@@ -6,11 +6,16 @@ public class Tower2 : BaseTower
 {
     protected override void Attack()
     {
-        throw new System.NotImplementedException();
+        var bullet = Instantiate(towerInfo.BulletsPrefab,
+                                    transform.position,
+                                    Quaternion.Euler(0, 0, -90), transform)
+                                    .GetComponent<TowerNormalBullet>();
+        bullet.Init(towerInfo.BulletSpeed, towerInfo.Damage);
+        Invoke(nameof(Attack), towerInfo.AttackSpeed);
     }
 
     protected override void Die()
     {
-        throw new System.NotImplementedException();
+        Destroy(gameObject);
     }
 }

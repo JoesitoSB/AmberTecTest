@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnerBoardPiece : BaseBoardPiece
 {
-    [SerializeField] private List<EnemyInfoScriptableObject> enemiesToSpawn = new List<EnemyInfoScriptableObject>();
-    private float spawnRate = 0;
+    [SerializeField] private List<EnemyInfoScriptableObject> enemiesToSpawn = new List<EnemyInfoScriptableObject>(); 
 
     private void Awake()
     {      

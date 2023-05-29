@@ -4,15 +4,19 @@ using UnityEngine;
 
 public abstract class BaseEnemy : BaseCharacter
 {
-    [SerializeField] private EnemyInfoScriptableObject enemyInfo = null;
+    [SerializeField] protected EnemyInfoScriptableObject enemyInfo = null;
     protected float movementSpeed = 0;
     protected int currentBoardRow = 0;
-    protected abstract void Move();
 
     private void Awake()
     {
         spriteRenderer.sprite = enemyInfo.Sprite;
         movementSpeed = enemyInfo.MovementSpeed;
+    }
+
+    private void Start()
+    {
+        Invoke(nameof(Attack), enemyInfo.AttackSpeed);
     }
 
     private void Update()
@@ -23,5 +27,5 @@ public abstract class BaseEnemy : BaseCharacter
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Triggered enemy");
-    }
+    }    
 }

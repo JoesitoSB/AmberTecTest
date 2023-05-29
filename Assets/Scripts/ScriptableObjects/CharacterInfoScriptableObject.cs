@@ -10,7 +10,8 @@ public abstract class CharacterInfoScriptableObject : ScriptableObject
     [SerializeField] protected float health = 0;
     [SerializeField] protected float range = 0;
     [SerializeField] protected float attackSpeed = 0;
-
+    [SerializeField] protected float bulletSpeed = 0;
+    [SerializeField] protected GameObject bulletsPrefab = null;
 
     public Sprite Sprite => sprite;
     public GameObject Prefab => prefab;
@@ -18,4 +19,6 @@ public abstract class CharacterInfoScriptableObject : ScriptableObject
     public float Health => health;
     public float Range => range;
     public float AttackSpeed => attackSpeed;
+    public float BulletSpeed => bulletSpeed;
+    public GameObject BulletsPrefab => bulletsPrefab;
 }
