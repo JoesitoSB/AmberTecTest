@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BaseBoardPiece : MonoBehaviour
 {
     protected Vector2 id = Vector2.zero;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer = null;
 
     public Vector2 GetSize()
     {

@@ -11,19 +11,22 @@ public class SelectTowerButton : MonoBehaviour
 
     private TowerInfoScriptableObject towerInfo = null;
     private SelectedTowerReference selectedTowerReference = null;
+    private BoardController boardController = null;
 
-    public void Init(TowerInfoScriptableObject towerInfo, SelectedTowerReference selectedTowerReference)
+    public void Init(TowerInfoScriptableObject towerInfo, SelectedTowerReference selectedTowerReference, BoardController boardController)
     {
         this.towerInfo = towerInfo;
         this.selectedTowerReference = selectedTowerReference;
+        this.boardController = boardController;
 
         name_TMP.text = this.towerInfo.Name;
-        icon_Img.sprite = this.towerInfo.Icon;
+        icon_Img.sprite = this.towerInfo.Sprite;
     }
 
     
     public void Select()
     {
         selectedTowerReference.SetSelectedTower(towerInfo);
+        boardController.ShowAvailableBoardPlaces(true);
     }
 }

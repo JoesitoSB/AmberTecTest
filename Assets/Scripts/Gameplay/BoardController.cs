@@ -15,6 +15,9 @@ public class BoardController : MonoBehaviour
     [SerializeField] private GameObject normalBP = null;
     [SerializeField] private GameObject enemySpawnerBP = null;
 
+    private delegate void ShowAvailablePlaces(bool show);
+    private ShowAvailablePlaces showAvailablePlaces;
+
     private BaseBoardPiece[,] board;
 
 
@@ -44,6 +47,9 @@ public class BoardController : MonoBehaviour
             //Here always goes first tower board piece
             var bBP = Instantiate(firstTowerBP, pos, Quaternion.identity, transform).GetComponent<BaseBoardPiece>();
             board[i, 0] = bBP;
+            var baseTowerBoardPiece = ((BaseTowerBoardPiece)bBP);
+            baseTowerBoardPiece.Init(this);
+            showAvailablePlaces += baseTowerBoardPiece.ShowCanvas;
             
             for(int j = 1; j < columnsAmount; j++)
             {
@@ -53,11 +59,17 @@ public class BoardController : MonoBehaviour
                 {                   
                     bBP = Instantiate(normalTowerBP, pos, Quaternion.identity, transform).GetComponent<BaseBoardPiece>();
                     board[i, j] = bBP;
+                    baseTowerBoardPiece = ((BaseTowerBoardPiece)bBP);
+                    baseTowerBoardPiece.Init(this);
+                    showAvailablePlaces += baseTowerBoardPiece.ShowCanvas;
                 }
                 else if(j == columnsAmount / 2)
                 {
                     bBP = Instantiate(limitTowerBP, pos, Quaternion.identity, transform).GetComponent<BaseBoardPiece>();
                     board[i, j] = bBP;
+                    baseTowerBoardPiece = ((BaseTowerBoardPiece)bBP);
+                    baseTowerBoardPiece.Init(this);
+                    showAvailablePlaces += baseTowerBoardPiece.ShowCanvas;
                 }
                 else if (j == columnsAmount - 1)
                 {
@@ -71,6 +83,19 @@ public class BoardController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ShowAvailableBoardPlaces(bool show)
+    {
+        /*for(int i = 0; i < rowAmount; i++)
+        {
+            for(int j = 0; j < columnsAmount / 2; j++) // just half because just the half of the columns are able to have towers in it
+            {
+                var bTB= (BaseTowerBoardPiece) board[i, j];
+                bTB.ShowCanvas(true);
+            }
+        }*/
+        showAvailablePlaces?.Invoke(show);
     }
 
 }

@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3504126007088027005}
+  selectedTowerReference: {fileID: 11400000, guid: 079fac4e429f447a1800c49d98a682fe, type: 2}
   canvas: {fileID: 4097967996549789543}
 --- !u!1 &7495312166883910816
 GameObject:

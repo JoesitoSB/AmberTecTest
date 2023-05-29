@@ -9,32 +9,38 @@ public class BaseTowerBoardPiece : BaseBoardPiece
     private BaseTower currentPlacedTower = null;
     private bool IsEmpty => currentPlacedTower == null;
 
+    private BoardController boardController = null;
+
     private void Awake()
     {
         ShowCanvas(false);
     }
 
-    public void ShowCanvas(bool show)
+    public void Init(BoardController boardController)
     {
-        canvas.gameObject.SetActive(show);
+        this.boardController = boardController;
     }
 
-    public bool PlaceSelectedTower()
+    public void ShowCanvas(bool show)
     {
-        if(IsEmpty && selectedTowerReference.SelectedTower != null)
+        if(IsEmpty) canvas.gameObject.SetActive(show);
+    }
+
+    public void PlaceSelectedTower()
+    {
+        boardController.ShowAvailableBoardPlaces(false);
+        if (IsEmpty && selectedTowerReference.SelectedTower != null)
         {
             PlaceTower(selectedTowerReference.SelectedTower);
-            return true;
         }
-
-        return false;
     }
 
     private void PlaceTower(TowerInfoScriptableObject towerInfo)
     {
+        
         if (currentPlacedTower == null)
         {
-            var tower = Instantiate(towerInfo.Prefab, transform).GetComponent<BaseTower>();
+            var tower = Instantiate(towerInfo.Prefab, new Vector3(transform.position.x + GetSize().x / 2, transform.position.y - GetSize().y / 2, 0), Quaternion.Euler(0, 0, 90), transform).GetComponent<BaseTower>();
             currentPlacedTower = tower;            
         }
     }

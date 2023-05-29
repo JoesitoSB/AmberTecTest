@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306dbfb6198cb486299accfc277b475c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardController: {fileID: 1932871017}
   towerInfos:
   - {fileID: 11400000, guid: fcd5026a660a449ceb06866224228eb2, type: 2}
   - {fileID: 11400000, guid: edb8bbe43f24d4398a5f06db62ba33de, type: 2}
