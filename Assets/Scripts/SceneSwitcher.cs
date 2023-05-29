@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject loadingSceneScreen = null;
-
     public void GoToGameScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(ScenesUtils.GameSceneName);
-        //Show loading screen
+        LoadScene(ScenesUtils.GameSceneName);
     }
 
     public void GoToMainMenuScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(ScenesUtils.MainMenuSceneName);
-        //Show loading screen
+        LoadScene(ScenesUtils.MainMenuSceneName);        
+    }
+
+    private void LoadScene(string sceneName)
+    {
+        GameStateController.ChangeGameState(GameStates.None);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
     }
 }

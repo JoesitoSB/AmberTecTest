@@ -38,13 +38,28 @@ public static class GameStateController
         GameStateController.onPlay += onPlay;
     }
 
+    public static void RemoveOnPlayAction(onStateChange onPlay)
+    {
+        GameStateController.onPlay -= onPlay;
+    }
+
     public static void AddOnWinAction(onStateChange onWin)
     {
         GameStateController.onWin += onWin;
     }
 
+    public static void RemoveOnWinAction(onStateChange onWin)
+    {
+        GameStateController.onWin -= onWin;
+    }
+
     public static void AddOnLoseAction(onStateChange onLose)
     {
         GameStateController.onLose += onLose;
+    }
+
+    public static void RemoveOnLoseAction(onStateChange onLose)
+    {
+        GameStateController.onLose -= onLose;
     }
 }

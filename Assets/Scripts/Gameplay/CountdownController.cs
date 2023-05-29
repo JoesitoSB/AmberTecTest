@@ -12,8 +12,8 @@ public class CountdownController : MonoBehaviour
 
     void Start()
     {
-        GameStateController.ChangeGameState(GameStates.Play)
-;        GameStateController.AddOnLoseAction(KillCountdown);
+        GameStateController.ChangeGameState(GameStates.Play);
+        GameStateController.AddOnLoseAction(KillCountdown);
         StartCoroutine(DoCountdown());
     }
 
@@ -40,5 +40,10 @@ public class CountdownController : MonoBehaviour
     {
         var progress = elapsedTime / (MinsToWin * 60);
         countdown_Img.fillAmount = progress;
+    }
+
+    private void OnDestroy()
+    {
+        GameStateController.RemoveOnLoseAction(KillCountdown);
     }
 }
