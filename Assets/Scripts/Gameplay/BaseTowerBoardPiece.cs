@@ -31,17 +31,18 @@ public class BaseTowerBoardPiece : BaseBoardPiece
         boardController.ShowAvailableBoardPlaces(false);
         if (IsEmpty && selectedTowerReference.SelectedTower != null)
         {
-            PlaceTower(selectedTowerReference.SelectedTower);
+            PlaceTower(selectedTowerReference.SelectedTower, selectedTowerReference.SelectedTowerButton);
         }
     }
 
-    private void PlaceTower(TowerInfoScriptableObject towerInfo)
+    private void PlaceTower(TowerInfoScriptableObject towerInfo, SelectTowerButton selectedTowerButton)
     {
         
         if (currentPlacedTower == null)
         {
             var tower = Instantiate(towerInfo.Prefab, new Vector3(transform.position.x + GetSize().x / 2, transform.position.y - GetSize().y / 2, 0), Quaternion.Euler(0, 0, 90), transform).GetComponent<BaseTower>();
-            currentPlacedTower = tower;            
+            currentPlacedTower = tower;
+            selectedTowerButton.StartCooldown();
         }
     }
 }

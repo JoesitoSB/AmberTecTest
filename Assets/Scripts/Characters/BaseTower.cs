@@ -22,9 +22,4 @@ public abstract class BaseTower : BaseCharacter
     {
         Invoke(nameof(Attack), towerInfo.AttackSpeed);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Triggered");
-    }
 }

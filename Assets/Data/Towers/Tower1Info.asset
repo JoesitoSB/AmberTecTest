@@ -21,4 +21,4 @@ MonoBehaviour:
   bulletSpeed: 0.2
   bulletsPrefab: {fileID: 8363687056395809216, guid: 049f6b9b866914a90b06e2e7f613642a, type: 3}
   name: Tower 1
-  spawnCooldownTime: 5
+  spawnCooldownTime: 10

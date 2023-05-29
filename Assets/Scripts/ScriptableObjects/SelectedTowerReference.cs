@@ -6,9 +6,11 @@ using UnityEngine;
 public class SelectedTowerReference : ScriptableObject
 {
     public TowerInfoScriptableObject SelectedTower { private set; get; }
+    public SelectTowerButton SelectedTowerButton { private set; get; }
 
-    public void SetSelectedTower(TowerInfoScriptableObject tower)
+    public void SetSelectedTower(TowerInfoScriptableObject tower, SelectTowerButton selectedTowerButton)
     {
         SelectedTower = tower;
+        SelectedTowerButton = selectedTowerButton;
     }
 }
